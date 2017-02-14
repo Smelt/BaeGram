@@ -1,40 +1,64 @@
 package com;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
-enum TimeOfDay{
-	MORNING, AFTERNOON, NIGHT;
-}
+/**
+ * @author Shivam Satyarthi
+ *
+ *This Class contains 3 ArrayLists that contain the possible messages we send out.
+ *The text messages are loaded from the TextMessage.txt file
+ */
 
 public class MessageList {
 	
-	private static ArrayList<String> morningMessages;
-	private static ArrayList<String> afternoonMessages;
-	private static ArrayList<String> nightMessages;
+	private ArrayList<String> morningMessages;
+	private ArrayList<String> afternoonMessages;
+	private ArrayList<String> nightMessages;
 	
-	private final String filePath;
-	static final String fileHeading = "Res/";
 	
-	public MessageList(String fileName){
+	private final String fileName = "Res/TextMessages.txt";
+
+	
+	public MessageList(){
 		
 		//we initialize the ArrayLists
 		morningMessages = new ArrayList<String>();
 		afternoonMessages = new ArrayList<String>();
 		nightMessages = new ArrayList<String>();
-
-		
-		this.filePath = "Res/" + fileName;
-		File messageFile = new File(filePath);
+		//we then parse the file for information
+		File messageFile = new File(fileName);
 		parseMessageFile(messageFile);
 		
 	}
-	
+	/**
+	 * This function takes a time of day and returns a randomized text message 
+	 * depending on the time of day
+	 * @param time
+	 * @return
+	 */
+	public String getMessage(TimeOfDay time){
+		Random r = new Random(System.currentTimeMillis());
+		int random = r.nextInt(10000);
+		switch(time){
+		case MORNING:
+			return morningMessages.get(random%morningMessages.size());
+		case AFTERNOON:
+			return afternoonMessages.get(random%afternoonMessages.size());
+		case NIGHT:
+			return nightMessages.get(random%nightMessages.size());
+		default:
+			return "Hey babe :)";
+		}
+	}
+	/**
+	 * This function takes in the message file and parses through it and records the 
+	 * possible array values in their respective arrays
+	 * @param messageFile
+	 */
 	private void parseMessageFile(File messageFile){	
 		try {
 			@SuppressWarnings("resource")
@@ -63,12 +87,16 @@ public class MessageList {
 			e.printStackTrace();
 		}
 	}
-
+	/**
+	 * This is a helper function that takes in a time of Day and line from our TextMessage 
+	 * File and inserts it into the proper ArrayList
+	 * @param category
+	 * @param str
+	 */
 	private void addToCategory(TimeOfDay category, String str){
 		
 		if(category == TimeOfDay.MORNING){
 			morningMessages.add(str);
-
 		}
 		if(category == TimeOfDay.AFTERNOON){
 			afternoonMessages.add(str);
