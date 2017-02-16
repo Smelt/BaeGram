@@ -10,7 +10,8 @@ public class Driver {
 		//recent execution
 		RequestLog requestLog = new RequestLog();
 		TimeOfDay frame = requestLog.getTimeFrame();
-		System.out.println(messageList.getMessage(frame));
+		String message = messageList.getMessage(frame);
+		Sender.sendMessage(message);
 	
 	}
 

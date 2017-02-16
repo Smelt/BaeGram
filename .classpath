@@ -2,5 +2,14 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/google-collections-1.0-rc2.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/jackson-databind-2.2.3.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/twilio-7.5.0-alpha-2.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/commons-logging-1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/jackson-annotations-2.8.6.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/shivam/Downloads/commons-codec-1.10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
