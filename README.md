@@ -9,5 +9,7 @@ Boyfriend comes home from work, pushes Amazon Dash to send his girlfriend a good
 
 Boyfriend is getting ready for bed, and pushes Amazon Dash to send his girlfriend a good night text.
 
-  
+#Problems
+
+I need an older model version of Amazon Dash Button, MACSniffer.py doesn't detect the newer model ones. 
   
